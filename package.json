@@ -1,0 +1,21 @@
+{
+  "name": "kaffhausen-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Kaffhausen – 1 Follower = 1 Einwohner. Automatische TikTok-Episoden (three.js + ElevenLabs).",
+  "scripts": {
+    "audio": "node tools/audio.mjs",
+    "render": "node tools/render.mjs",
+    "still": "node tools/still.mjs",
+    "make": "node tools/make.mjs",
+    "preview": "node tools/make.mjs --preview"
+  },
+  "dependencies": {
+    "@fontsource/lilita-one": "^5.0.0",
+    "@fontsource/nunito": "^5.0.0",
+    "ffmpeg-static": "^5.2.0",
+    "puppeteer": "^23.0.0",
+    "three": "^0.170.0"
+  }
+}

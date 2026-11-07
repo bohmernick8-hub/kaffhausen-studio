@@ -1,0 +1,104 @@
+{
+  "day": 1,
+  "einwohner": 0,
+  "kasse": 0,
+  "profileScreenshot": "episodes/001/profile.png",
+  "profileHighlight": { "x": 298, "y": 50, "w": 140, "h": 26 },
+  "ambience": "crickets",
+  "tempBuildings": [
+    { "id": "demo_doener", "type": "shop", "pos": [6.4, 2.6], "rot": -0.55, "title": "DEIN DÖNER", "color": "#e5533d", "shots": ["s7"], "appearAt": 2.2 }
+  ],
+  "shots": [
+    {
+      "id": "s1", "text": "Das ist Kaffhausen. Die kleinste Stadt Deutschlands.",
+      "keywords": ["kaffhausen", "kleinste"],
+      "scene": "evening", "nick": "idle",
+      "cam": { "type": "orbit", "center": [0, 0.8, 1.5], "radius": [30, 15], "height": [22, 5], "angle": [0.9, 0.35], "fov": 40 },
+      "overlays": [{ "type": "tagBadge", "in": 0.2 }],
+      "sfx": [{ "name": "whoosh", "at": 0 }, { "name": "pop", "at": 0.25 }]
+    },
+    {
+      "id": "s2", "text": "Einwohner: null.",
+      "keywords": ["null"],
+      "scene": "evening", "nick": "idle",
+      "cam": { "from": "signFar", "to": "signClose", "ease": "out" },
+      "overlays": [{ "type": "counter", "label": "EINWOHNER", "from": 0, "to": 0, "color": "red", "top": 150, "in": 0.1 }],
+      "sfx": [{ "name": "pop", "at": 0.1 }]
+    },
+    {
+      "id": "s3", "text": "Naja, fast. Ich wohne hier. In einem Schuppen.",
+      "keywords": ["schuppen"],
+      "scene": "evening", "nick": "wave",
+      "cam": { "from": "nickFar", "to": "nickMed", "ease": "inout" },
+      "overlays": [{ "type": "nameTag", "name": "NICK", "sub": "Einziger Bewohner", "anchor": [0.9, 2.15, 2.3], "in": 0.5 }],
+      "sfx": [{ "name": "door", "at": 0 }, { "name": "pop", "at": 0.5 }]
+    },
+    {
+      "id": "s4", "text": "Die Tür klemmt, das Dach ist rostig, und Nachbarn hab ich keine.",
+      "keywords": ["tür", "dach", "keine"],
+      "scene": "evening", "nick": "sad",
+      "cam": { "from": "doorClose", "to": "roofPan", "ease": "inout" },
+      "overlays": [],
+      "sfx": []
+    },
+    {
+      "id": "s5", "text": "Und genau da kommst du ins Spiel. Jeder Follower ist ein Einwohner.",
+      "keywords": ["du", "einwohner", "follower"],
+      "scene": "evening", "nick": "idle",
+      "cam": { "from": "shedWide", "to": "shedWide2", "ease": "inout" },
+      "overlays": [
+        { "type": "dim", "in": 0 },
+        { "type": "profile", "in": 0.05 },
+        { "type": "rulePill", "text": "1 FOLLOW = 1 EINWOHNER", "in": 2.4 }
+      ],
+      "sfx": [{ "name": "pop", "at": 0.05 }, { "name": "scribble", "at": 0.7 }, { "name": "ding", "at": 2.4 }]
+    },
+    {
+      "id": "s6", "text": "Jeder Einwohner zahlt Steuern in die Stadtkasse. Aktuell: null Euro.",
+      "keywords": ["steuern", "stadtkasse", "null"],
+      "scene": "evening", "nick": "sad",
+      "cam": { "from": "benchClose", "to": "benchClose2", "ease": "inout" },
+      "overlays": [{ "type": "kasse", "amount": 0, "empty": true, "in": 0.2 }],
+      "sfx": [{ "name": "pop", "at": 0.2 }, { "name": "tin", "at": 2.2 }]
+    },
+    {
+      "id": "s7", "text": "Der Top-Kommentar zieht mit seinem Wunsch ein. Du willst einen Dönerladen? Er wird gebaut. Mit deinem Namen dran.",
+      "keywords": ["top-kommentar", "dönerladen", "namen"],
+      "scene": "evening", "nick": "cheer",
+      "cam": { "from": "shopDemoFar", "to": "shopDemo", "ease": "inout" },
+      "overlays": [
+        { "type": "comment", "user": "dein.name", "text": "Ich will einen Dönerladen 🥙", "likes": 1337, "example": true, "in": 0.1, "out": 2.1 },
+        { "type": "nameTag", "name": "@DEIN.NAME", "sub": "Dönerboss", "anchor": [6.4, 3.4, 2.6], "in": 3.0 }
+      ],
+      "sfx": [{ "name": "pop", "at": 0.1 }, { "name": "hammer", "at": 2.0 }, { "name": "cheer", "at": 2.8 }]
+    },
+    {
+      "id": "s8", "text": "Alles andere entscheidet ihr. Rathaus, Freibad, Bahnhof.",
+      "keywords": ["ihr", "rathaus", "freibad", "bahnhof"],
+      "scene": "evening", "nick": "idle",
+      "cam": { "from": "shedWide2", "to": "shedWide", "ease": "inout" },
+      "overlays": [
+        { "type": "dim", "in": 0 },
+        { "type": "poll", "q": "Was bauen wir als Erstes?", "opts": ["Rathaus 🏛️", "Freibad 🏊", "Bahnhof 🚉"], "reveal": false, "in": 0.1 }
+      ],
+      "sfx": [{ "name": "pop", "at": 0.1 }, { "name": "pop", "at": 1.2 }, { "name": "pop", "at": 1.8 }, { "name": "pop", "at": 2.4 }]
+    },
+    {
+      "id": "s9", "text": "Unser Ziel: Aus diesem Kaff die größte Stadt Deutschlands machen.",
+      "keywords": ["ziel", "größte"],
+      "scene": "goal", "nick": "idle",
+      "cam": { "from": "goalFar", "to": "goalNear", "ease": "inout" },
+      "overlays": [{ "type": "goal", "title": "UNSER ZIEL", "sub": "GRÖSSTE STADT DEUTSCHLANDS", "in": 0.3 }],
+      "sfx": [{ "name": "sparkle", "at": 0.2 }]
+    },
+    {
+      "id": "s10", "text": "Folg, um einzuziehen. Und schreib in die Kommentare, was du in Kaffhausen sein willst.",
+      "keywords": ["folg", "einzuziehen", "kommentare"],
+      "scene": "night", "nick": "wave", "sign": ["KAFFHAUSEN", "Einwohner: ?"],
+      "cam": { "from": "nightWide", "to": "nightSign", "ease": "inout" },
+      "overlays": [{ "type": "endCard", "in": 0.2 }],
+      "sfx": [{ "name": "pop", "at": 0.2 }, { "name": "follow", "at": 1.4 }],
+      "padAfter": 1.2
+    }
+  ]
+}

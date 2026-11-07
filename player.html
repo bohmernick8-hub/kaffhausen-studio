@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="/node_modules/@fontsource/lilita-one/index.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/nunito/800.css">
+<link rel="stylesheet" href="/node_modules/@fontsource/nunito/600.css">
+<link rel="stylesheet" href="/src/ui.css">
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="stage"></div>
+<div id="ui"></div>
+<script type="module">
+// player.html?ep=001&w=1080&h=1920[&t=3.5]   (t = Einzelbild zum Ansehen im Browser)
+import { createPlayer } from '/src/player.js';
+const q = new URLSearchParams(location.search);
+const ep = q.get('ep') || '001';
+const width = +q.get('w') || 1080, height = +q.get('h') || 1920;
+const scale = width / 1080;
+document.body.style.width = width + 'px'; document.body.style.height = height + 'px';
+// UI ist für 1080 Breite gebaut → bei Preview-Auflösung skalieren
+const ui = document.getElementById('ui');
+ui.style.width = '1080px'; ui.style.height = '1920px'; ui.style.transformOrigin = '0 0'; ui.style.transform = `scale(${scale})`;
+const j = async p => (await fetch(p)).json();
+const [config, city, episode, timeline] = await Promise.all([
+  j('/config.json'), j('/city/city.json'), j(`/episodes/${ep}/episode.json`), j(`/out/ep${ep}/timeline.json`),
+]);
+await Promise.all([document.fonts.load('80px "Lilita One"'), document.fonts.load('800 40px Nunito'), document.fonts.load('600 40px Nunito')]);
+// Bilder vorladen
+await Promise.all([config.channel.pfp, episode.profileScreenshot].filter(Boolean).map(src => new Promise(r => { const i = new Image(); i.onload = i.onerror = r; i.src = '/' + src; })));
+const player = createPlayer({ width, height, config, city, episode, timeline });
+// project() liefert 1080er-Koordinaten für das skalierte UI
+window.renderAt = (T) => { player.renderAt(T); return true; };
+window.TOTAL = player.total;
+if (q.get('t')) player.renderAt(+q.get('t'));
+window.READY = true;
+</script>
+</body></html>

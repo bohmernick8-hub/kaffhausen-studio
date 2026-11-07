@@ -1,0 +1,21 @@
+{
+  "name": "Kaffhausen",
+  "day": 1,
+  "einwohner": 0,
+  "kasse": 0,
+  "steuerProEinwohner": 2,
+  "mayor": null,
+  "buildings": [
+    { "id": "schuppen", "type": "shed", "pos": [0, 0], "rot": 0.02, "owner": "Nick", "builtDay": 1 },
+    { "id": "bank1", "type": "bench", "pos": [2.9, 2.6], "rot": -0.5, "builtDay": 1 },
+    { "id": "laterne1", "type": "lamp", "pos": [-2.4, 2.9], "rot": 0, "builtDay": 1 },
+    { "id": "baum1", "type": "tree", "pos": [4.6, -1.2], "scale": 1.15, "builtDay": 1 },
+    { "id": "ortsschild", "type": "sign", "pos": [-3.3, 5.4], "rot": 0.45, "builtDay": 1 },
+    { "id": "tonne1", "type": "bin", "pos": [-2.2, 0.9], "rot": 0.3, "builtDay": 1 },
+    { "id": "zaun1", "type": "fence", "pos": [-5.8, -1.6], "rot": 0.15, "length": 3.5, "builtDay": 1 }
+  ],
+  "residents": [],
+  "history": [
+    { "day": 1, "event": "Kaffhausen gegründet. Nick wohnt allein im Schuppen." }
+  ]
+}

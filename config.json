@@ -1,0 +1,40 @@
+{
+  "channel": {
+    "name": "Kaffhausen",
+    "handle": "@wirbauenkaffhausen",
+    "bio": "1 Follower = 1 Einwohner 🏠 · Top Kommentar zieht ein 👑",
+    "pfp": "assets/pfp.png"
+  },
+  "video": { "width": 1080, "height": 1920, "fps": 30 },
+  "elevenlabs": {
+    "apiKeyEnv": "ELEVENLABS_API_KEY",
+    "voiceId": "raYPS0b2ZPlIzZWkcD0G",
+    "ttsModel": "eleven_v4",
+    "ttsModelMatch": "v4",
+    "languageCode": "de",
+    "voiceSettings": { "stability": 0.5, "similarity_boost": 0.8, "style": 0.25, "use_speaker_boost": true },
+    "musicModel": "music_v1"
+  },
+  "music": {
+    "theme": {
+      "file": "assets/music/theme.mp3",
+      "prompt": "Cozy upbeat city-builder video game music, ukulele, glockenspiel, pizzicato strings, soft shaker and light percussion, warm and playful, hopeful, 100 bpm, no vocals, loopable",
+      "lengthMs": 90000
+    }
+  },
+  "mix": { "voiceGain": 1.0, "musicGain": 0.16, "sfxGain": 0.55, "padAfterLine": 0.22 },
+  "sfx": {
+    "whoosh":   { "prompt": "Fast cinematic camera whoosh swoosh, clean, short", "duration": 1.2 },
+    "door":     { "prompt": "Old wooden shed door creaking open slowly", "duration": 1.8 },
+    "crickets": { "prompt": "Calm summer evening ambience, crickets chirping, distant birds, peaceful countryside", "duration": 22 },
+    "pop":      { "prompt": "Soft cartoon UI pop, bubbly notification sound", "duration": 0.5 },
+    "ding":     { "prompt": "Bright positive UI ding chime, short", "duration": 0.8 },
+    "tick":     { "prompt": "Fast rolling number counter ticking, slot machine digits, short", "duration": 1.5 },
+    "tin":      { "prompt": "Empty metal cash box rattling, a single coin rolling inside, comedic", "duration": 1.5 },
+    "cheer":    { "prompt": "Small group of people cheering and clapping happily", "duration": 2.5 },
+    "hammer":   { "prompt": "Construction hammering and building sounds, cartoonish, short", "duration": 2 },
+    "scribble": { "prompt": "Red marker pen quickly drawing a circle on paper", "duration": 0.8 },
+    "sparkle":  { "prompt": "Magical sparkle shimmer, hopeful rising chime", "duration": 1.8 },
+    "follow":   { "prompt": "Satisfying button tap click followed by a soft success pop", "duration": 0.7 }
+  }
+}
