@@ -376,7 +376,7 @@ export function makeShop({ title = 'LADEN', color = '#e5533d', wall = '#f3e3c3' 
   // flat roof with rim
   mesh(new RoundedBoxGeometry(3.2, 0.22, 2.8, 2, 0.04), std(0x6d5a4a), 0, 2.7, 0, g);
   // shop window glowing
-  const glass = new THREE.MeshStandardMaterial({ color: 0xfff1c9, emissive: 0xffc46b, emissiveIntensity: 1.3, roughness: 0.2 });
+  const glass = new THREE.MeshStandardMaterial({ color: 0xffc46b, emissive: 0xffa53c, emissiveIntensity: 1.2, roughness: 0.2 });
   const win = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 1.0), glass); win.position.set(0.55, 1.05, 1.311); g.add(win);
   mesh(new THREE.BoxGeometry(1.62, 0.08, 0.08), std(0x3a2f28), 0.55, 0.53, 1.33, g);
   // door
