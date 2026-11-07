@@ -49,5 +49,6 @@ for (let f = 0; f < frames; f++) {
 }
 ff.stdin.end();
 await ffDone;
-await browser.close(); server.close();
+await Promise.race([browser.close(), new Promise(r => setTimeout(r, 5000))]); server.close();
 console.log(`\n✓ Video fertig: ${out}`);
+process.exit(0);

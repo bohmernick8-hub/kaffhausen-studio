@@ -20,4 +20,5 @@ for (const t of ts) {
   await page.screenshot({ path: f });
   console.log('✓', f);
 }
-await browser.close(); server.close();
+await Promise.race([browser.close(), new Promise(r => setTimeout(r, 5000))]); server.close();
+process.exit(0);
